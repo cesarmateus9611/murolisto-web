@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Distribuidor oficial de Productos Santafe. Estuco 100% Acrílico y Vinilo Tipo 1 directo de fábrica para maestros de obra y contratistas.">
+<title>MuroListo | Distribuidor Oficial Productos Santafe</title>
+
+<!-- Favicon: monograma "ML" sobre navy de marca, como SVG inline (sin archivo aparte) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23162740'/%3E%3Ctext x='32' y='43' font-family='Arial, sans-serif' font-weight='900' font-size='28' fill='%23ffffff' text-anchor='middle'%3EML%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="rgb(22,39,64)">
+
+<!-- Open Graph / WhatsApp / redes sociales -->
+<!-- IMPORTANTE: cuando publiques el sitio en un dominio, reemplaza el valor
+     de og:url y og:image por la URL absoluta real (https://tudominio.com/...);
+     algunas apps (WhatsApp incluido) no muestran la vista previa con rutas relativas. -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="MuroListo">
+<meta property="og:url" content="https://tudominio.com/">
+<meta property="og:title" content="MuroListo | Estuco Acrílico y Vinilo directo de fábrica">
+<meta property="og:description" content="Distribuidor oficial de Productos Santafe. Sin intermediarios, ahorra hasta un 25%. Cotiza por WhatsApp.">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MuroListo | Estuco Acrílico y Vinilo directo de fábrica">
+<meta name="twitter:description" content="Distribuidor oficial de Productos Santafe. Sin intermediarios, ahorra hasta un 25%.">
+<meta name="twitter:image" content="og-image.jpg">
+
+<!-- Tipografía: Archivo (display, contundente/industrial) + IBM Plex Sans (texto, técnico y legible) + IBM Plex Mono (cifras/precios, lectura tipo ficha técnica) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600;700&display=swap">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          /* Todos los tokens leen de custom properties CSS, así que
+             heredan el tema claro/oscuro automáticamente. `navy` es el
+             color de marca fijo (hero, footer, tarjeta estrella): no
+             cambia con el tema. `ink`, `concrete` y `surface` sí. */
+          navy: {
+            DEFAULT: 'rgb(var(--navy) / <alpha-value>)',
+            2: 'rgb(var(--navy-2) / <alpha-value>)',
+            3: 'rgb(var(--navy-3) / <alpha-value>)',
+          },
+          concrete: {
+            DEFAULT: 'rgb(var(--concrete) / <alpha-value>)',
+            2: 'rgb(var(--concrete-2) / <alpha-value>)',
+          },
+          surface: 'rgb(var(--surface) / <alpha-value>)',
+          ink: 'rgb(var(--ink) / <alpha-value>)',
+          steel: {
+            DEFAULT: 'rgb(var(--steel) / <alpha-value>)',
+            deep: 'rgb(var(--steel-deep) / <alpha-value>)',
+          },
+          hazard: {
+            DEFAULT: 'rgb(var(--hazard) / <alpha-value>)',
+            deep: 'rgb(var(--hazard-deep) / <alpha-value>)',
+          },
+          wa: {
+            DEFAULT: 'rgb(var(--wa) / <alpha-value>)',
+            deep: 'rgb(var(--wa-deep) / <alpha-value>)',
+          },
+        },
+        fontFamily: {
+          display: ['Archivo', 'system-ui', 'sans-serif'],
+          body: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+          mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        },
+        boxShadow: {
+          'lift': '0 20px 45px -15px rgba(18,23,31,0.35)',
+          'lift-sm': '0 10px 25px -10px rgba(18,23,31,0.25)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  /* ---------------------------------------------------------------
+     Tokens: paleta de marca (concreto cálido + acero + ámbar de
+     seguridad) con soporte completo de tema claro/oscuro. `navy` es
+     el color de marca fijo (hero, footer, tarjeta estrella) y no
+     cambia con el tema; `ink`, `concrete` y `surface` sí se adaptan.
+     Valores en "R G B" para poder usar los modificadores de opacidad
+     de Tailwind (bg-ink/10, text-ink/60, etc.) sobre custom properties.
+  ----------------------------------------------------------------*/
+  :root {
+    --navy: 22 39 64;
+    --navy-2: 33 53 84;
+    --navy-3: 45 68 102;
+    --concrete: 250 249 246;
+    --concrete-2: 241 238 231;
+    --surface: 255 255 255;
+    --ink: 15 23 42;
+    --steel: 30 95 224;
+    --steel-deep: 23 70 168;
+    --hazard: 242 167 27;
+    --hazard-deep: 201 125 10;
+    --wa: 34 197 94;
+    --wa-deep: 22 163 74;
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --navy: 6 10 18;
+      --navy-2: 15 21 34;
+      --navy-3: 24 32 48;
+      --concrete: 15 19 28;
+      --concrete-2: 23 29 42;
+      --surface: 26 33 48;
+      --ink: 230 227 218;
+      --steel: 74 130 246;
+      --steel-deep: 45 100 220;
+      --hazard: 245 176 45;
+      --hazard-deep: 196 130 20;
+      --wa: 45 189 107;
+      --wa-deep: 30 156 88;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --navy: 6 10 18;
+    --navy-2: 15 21 34;
+    --navy-3: 24 32 48;
+    --concrete: 15 19 28;
+    --concrete-2: 23 29 42;
+    --surface: 26 33 48;
+    --ink: 230 227 218;
+    --steel: 74 130 246;
+    --steel-deep: 45 100 220;
+    --hazard: 245 176 45;
+    --hazard-deep: 196 130 20;
+    --wa: 45 189 107;
+    --wa-deep: 30 156 88;
+    color-scheme: dark;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: rgb(var(--concrete)); }
+
+  h1, h2, h3, h4 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  .font-mono, .tabular { font-variant-numeric: tabular-nums; }
+
+  /* Sello animado tipo "certificación" en el hero */
+  @keyframes seal-spin { to { transform: rotate(360deg); } }
+  .seal-spin { animation: seal-spin 30s linear infinite; transform-origin: 50% 50%; }
+
+  /* Franja tipo cinta de peligro — usada con moderación como acento */
+  .hazard-stripe {
+    background-image: repeating-linear-gradient(
+      135deg,
+      rgb(var(--hazard)) 0, rgb(var(--hazard)) 14px,
+      rgb(var(--navy)) 14px, rgb(var(--navy)) 28px
+    );
+  }
+
+  /* Glassmorphism para la calculadora */
+  .glass {
+    background: rgb(var(--surface) / 0.72);
+    backdrop-filter: blur(20px) saturate(160%);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    border: 1px solid rgb(var(--surface) / 0.6);
+  }
+
+  /* Borde animado para tarjetas destacadas */
+  @property --combo-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+  .combo-border { position: relative; isolation: isolate; }
+  .combo-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    background: conic-gradient(from var(--combo-angle), rgb(var(--hazard)), rgb(var(--hazard-deep)), rgb(var(--steel)), rgb(var(--hazard)));
+    animation: spin-combo 6s linear infinite;
+  }
+  @keyframes spin-combo { to { --combo-angle: 360deg; } }
+
+  /* Pulso del botón flotante de WhatsApp */
+  .wa-pulse::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgb(var(--wa));
+    animation: wa-ping 2.2s cubic-bezier(0.4,0,0.6,1) infinite;
+  }
+  @keyframes wa-ping {
+    0% { transform: scale(1); opacity: 0.55; }
+    75%, 100% { transform: scale(1.9); opacity: 0; }
+  }
+
+  /* Revelado de resultados de la calculadora */
+  #resultados-calculadora {
+    opacity: 0;
+    transform: translateY(10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, transform 0.5s ease, max-height 0.6s ease;
+  }
+  #resultados-calculadora.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 640px;
+  }
+
+  /* Foco visible accesible, consistente con la identidad */
+  a:focus-visible, button:focus-visible, input:focus-visible {
+    outline: 3px solid rgb(var(--steel));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Scroll-reveal sutil en tarjetas y bloques */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Navegación: enlaces de anclas + menú móvil */
+  .nav-links { display: flex; flex-direction: column; gap: 0; }
+  .nav-links a {
+    padding: 0.85rem 1.5rem;
+    border-top: 1px solid rgb(var(--ink) / 0.08);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: rgb(var(--ink) / 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: rgb(var(--steel)); }
+  @media (max-width: 767px) {
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgb(var(--surface));
+      border-bottom: 1px solid rgb(var(--ink) / 0.1);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.25s ease;
+    }
+    .nav-links.open { max-height: 320px; opacity: 1; }
+  }
+  @media (min-width: 768px) {
+    .nav-links { flex-direction: row; align-items: center; gap: 2rem; }
+    .nav-links a { padding: 0; border-top: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .combo-border::before, .wa-pulse::before, .seal-spin { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { transition-duration: 0.001ms !important; }
+  }
+</style>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+
+<body class="font-body text-ink antialiased">
+
+  <!-- BOTÓN FLOTANTE WHATSAPP -->
+  <a href="https://wa.me/573058570653?text=%C2%A1Hola%20Muro%20Listo%21%20%F0%9F%91%B7%E2%80%8D%E2%99%82%EF%B8%8F%20Vengo%20de%20su%20p%C3%A1gina%20web.%20Me%20interesa%20aprovechar%20los%20precios%20directos%20de%20f%C3%A1brica%20de%20Productos%20SantaFe%20para%20mi%20proyecto.%20%C2%BFMe%20ayudan%20con%20una%20cotizaci%C3%B3n%2C%20por%20favor%3F"
+     target="_blank" rel="noopener"
+     aria-label="Cotizar por WhatsApp"
+     class="group fixed bottom-6 right-6 z-50 flex h-16 w-16 items-center justify-center">
+    <span class="wa-pulse absolute inset-0 rounded-full"></span>
+    <span class="relative flex h-16 w-16 items-center justify-center rounded-full bg-wa text-white shadow-lift transition-transform duration-300 ease-out group-hover:scale-110 group-active:scale-95">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="h-8 w-8" fill="currentColor" aria-hidden="true">
+        <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.696 4.607 1.898 6.48L4 29l7.72-1.858A11.93 11.93 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3Zm0 21.7a9.63 9.63 0 0 1-4.928-1.353l-.353-.21-4.58 1.102 1.126-4.463-.23-.366A9.61 9.61 0 0 1 6.3 15c0-5.354 4.348-9.7 9.701-9.7 5.353 0 9.7 4.346 9.7 9.7 0 5.353-4.347 9.7-9.7 9.7Zm5.34-7.267c-.29-.146-1.722-.85-1.989-.947-.267-.097-.462-.146-.656.146-.194.293-.752.947-.922 1.14-.17.195-.34.22-.63.073-.29-.146-1.225-.452-2.334-1.44-.863-.77-1.446-1.72-1.615-2.012-.17-.293-.018-.451.127-.596.13-.13.29-.34.436-.51.145-.17.194-.293.29-.488.097-.195.049-.365-.024-.51-.073-.146-.656-1.583-.9-2.167-.237-.568-.478-.491-.656-.5l-.559-.01c-.194 0-.51.073-.777.365-.267.293-1.018.996-1.018 2.43 0 1.434 1.042 2.82 1.187 3.014.146.195 2.052 3.135 4.972 4.396.695.3 1.237.48 1.66.614.697.222 1.332.19 1.834.115.56-.084 1.722-.704 1.965-1.384.243-.68.243-1.263.17-1.384-.073-.122-.267-.195-.558-.34Z"/>
+      </svg>
+    </span>
+  </a>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="sticky top-0 z-40 border-b border-ink/10 bg-concrete/85 backdrop-blur-md">
+    <div class="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+      <div class="leading-none">
+        <span class="font-display text-lg font-900 tracking-tight text-ink">MURO<span class="text-steel">LISTO</span></span>
+        <span class="mt-0.5 block font-mono text-[10px] font-semibold uppercase tracking-widest text-ink/40">Distribuidor oficial · Productos Santafe</span>
+      </div>
+
+      <nav id="nav-links" class="nav-links">
+        <a href="#calculadora">Calculadora</a>
+        <a href="#galeria">Galería</a>
+        <a href="#precios">Precios</a>
+        <a href="#combos">Combos</a>
+        <a href="#nosotros">Nosotros</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/573058570653?text=%C2%A1Hola%20Muro%20Listo%21%20%F0%9F%91%B7%E2%80%8D%E2%99%82%EF%B8%8F%20Vengo%20de%20su%20p%C3%A1gina%20web.%20Me%20interesa%20aprovechar%20los%20precios%20directos%20de%20f%C3%A1brica%20de%20Productos%20SantaFe%20para%20mi%20proyecto.%20%C2%BFMe%20ayudan%20con%20una%20cotizaci%C3%B3n%2C%20por%20favor%3F"
+           target="_blank" rel="noopener"
+           class="rounded-full bg-navy px-5 py-2 text-sm font-semibold text-white shadow-lift-sm transition-all duration-300 hover:bg-steel hover:shadow-lift">
+          Cotizar ahora
+        </a>
+        <button id="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-links"
+                class="flex h-10 w-10 items-center justify-center rounded-lg border border-ink/15 text-ink md:hidden">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="relative overflow-hidden bg-concrete px-6 pb-32 pt-16 text-ink">
+    <!-- Textura de muro (temática de obra), muy sutil -->
+    <svg class="pointer-events-none absolute inset-0 h-full w-full text-ink/[0.05]" aria-hidden="true">
+      <defs>
+        <pattern id="brick-pattern" width="64" height="32" patternUnits="userSpaceOnUse">
+          <rect width="30" height="14" x="2" y="2" rx="2" fill="currentColor"/>
+          <rect width="30" height="14" x="34" y="2" rx="2" fill="currentColor"/>
+          <rect width="30" height="14" x="18" y="18" rx="2" fill="currentColor"/>
+          <rect width="30" height="14" x="-14" y="18" rx="2" fill="currentColor"/>
+          <rect width="30" height="14" x="50" y="18" rx="2" fill="currentColor"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#brick-pattern)"/>
+    </svg>
+    <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-hazard/20 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-16 -left-24 h-72 w-72 rounded-full bg-steel/15 blur-3xl"></div>
+    <div class="absolute inset-x-0 top-0 h-1.5 hazard-stripe"></div>
+
+    <div class="relative z-10 mx-auto max-w-4xl text-center">
+      <!-- Sello animado: distribuidor oficial -->
+      <div class="relative mx-auto mb-6 flex h-24 w-24 items-center justify-center md:absolute md:right-0 md:top-0 md:mb-0">
+        <svg class="seal-spin absolute inset-0 h-full w-full text-hazard-deep/70" viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <path id="seal-circle" d="M60,60 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/>
+          </defs>
+          <text class="font-mono" font-size="8.2" font-weight="700" letter-spacing="2" fill="currentColor">
+            <textPath href="#seal-circle" startOffset="0%">DISTRIBUIDOR OFICIAL · PRODUCTOS SANTAFE · DISTRIBUIDOR OFICIAL · PRODUCTOS SANTAFE ·</textPath>
+          </text>
+        </svg>
+        <div class="relative flex h-12 w-12 items-center justify-center rounded-full bg-hazard text-navy shadow-lift">
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <span class="inline-flex items-center gap-2 rounded-full border border-hazard/40 bg-hazard/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-hazard-deep">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          Ahorra hasta un 25%
+        </span>
+        <span class="inline-flex items-center gap-2 rounded-full border border-steel/40 bg-steel/10 px-4 py-1.5 text-sm font-semibold uppercase tracking-wide text-steel">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75 11.25 15 15 9.75M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+          Distribuidor Oficial Santafe
+        </span>
+      </div>
+
+      <h1 class="mt-6 font-display text-5xl font-900 leading-[1.05] tracking-tight text-ink md:text-7xl">
+        Estuco Acrílico y Vinilo
+        <span class="block bg-gradient-to-r from-steel via-steel-deep to-steel bg-clip-text text-transparent">directo de fábrica a tu obra</span>
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-ink/65 md:text-xl">
+        Sin intermediarios. Presentaciones de 28kg (cuñete y bolsa). Despacho rápido directo a tu proyecto.
+      </p>
+
+      <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a href="https://wa.me/573058570653?text=%C2%A1Hola%20Muro%20Listo%21%20%F0%9F%91%B7%E2%80%8D%E2%99%82%EF%B8%8F%20Vengo%20de%20su%20p%C3%A1gina%20web.%20Me%20interesa%20aprovechar%20los%20precios%20directos%20de%20f%C3%A1brica%20de%20Productos%20SantaFe%20para%20mi%20proyecto.%20%C2%BFMe%20ayudan%20con%20una%20cotizaci%C3%B3n%2C%20por%20favor%3F"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 rounded-full bg-steel px-8 py-4 text-lg font-bold text-white shadow-lift transition-all duration-300 hover:-translate-y-0.5 hover:bg-steel-deep hover:shadow-[0_20px_45px_-10px_rgba(30,95,224,0.55)]">
+          Cotizar por WhatsApp
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0-7 7m7-7H3"/></svg>
+        </a>
+        <a href="#precios" class="inline-flex items-center gap-2 rounded-full border border-ink/20 px-8 py-4 text-lg font-semibold text-ink/80 transition-colors duration-300 hover:border-ink/40 hover:bg-ink/5">
+          Ver precios de fábrica
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-ink/50">Cotización formal por WhatsApp · Pago 100% anticipado, sin sorpresas y en tu obra.</p>
+
+      <!-- Beneficios escaneables en 3 segundos -->
+      <div class="mx-auto mt-12 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-semibold text-ink/70">
+        <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-hazard-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16m14 0H5m14 0h2M5 21H3m5-14h4m-4 4h4m-4 4h4"/></svg> Directo de fábrica</span>
+        <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-hazard-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Sin intermediarios</span>
+        <span class="inline-flex items-center gap-2"><svg class="h-4 w-4 text-hazard-deep" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c3 3.5 6 7.14 6 10.5A6 6 0 1 1 6 13.5C6 10.14 9 6.5 12 3Z"/></svg> Resiste la humedad</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CALCULADORA INTELIGENTE -->
+  <section id="calculadora" class="relative z-10 -mt-16 px-6">
+    <div class="glass reveal mx-auto max-w-3xl rounded-3xl p-8 shadow-lift md:p-10">
+      <div class="mb-8 text-center">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-steel">Calculadora inteligente</span>
+        <h2 class="mt-2 font-display text-2xl font-800 text-ink md:text-3xl">¿No sabes cuánto material necesitas?</h2>
+        <p class="mt-2 text-ink/60">Ingresa el área de tu apartamento (obra gris) y te decimos la cantidad exacta.</p>
+      </div>
+
+      <div class="flex flex-col items-end gap-4 md:flex-row">
+        <div class="w-full">
+          <label for="m2-input" class="mb-2 block text-sm font-bold text-ink/80">Área del apartamento (m² de piso)</label>
+          <div class="relative">
+            <input type="number" id="m2-input" placeholder="Ej: 58" min="1" inputmode="decimal"
+                   class="w-full rounded-xl border border-ink/15 bg-surface/80 px-5 py-4 pr-14 font-mono text-lg text-ink shadow-inner transition-shadow focus:border-steel focus:ring-2 focus:ring-steel/30">
+            <span class="pointer-events-none absolute inset-y-0 right-5 flex items-center font-mono text-sm font-semibold text-ink/40">m²</span>
+          </div>
+        </div>
+        <button id="btn-calcular" type="button"
+                class="w-full whitespace-nowrap rounded-xl bg-navy px-8 py-4 font-bold text-white shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-steel hover:shadow-lift md:w-auto">
+          Calcular materiales
+        </button>
+      </div>
+
+      <div id="resultados-calculadora" class="mt-6 rounded-2xl border border-steel/20 bg-steel/5 p-6">
+        <h3 class="mb-4 font-display text-lg font-800 text-ink">Recomendación para tu obra a dos manos</h3>
+        <ul class="mb-6 space-y-3 text-ink/80">
+          <li class="flex items-center justify-between rounded-lg bg-surface/70 px-4 py-3">
+            <span class="flex items-center gap-2 font-semibold"><svg class="h-5 w-5 text-hazard" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Estuco Acrílico</span>
+            <strong id="resultado-estuco" class="font-mono text-ink"></strong>
+          </li>
+          <li class="flex items-center justify-between rounded-lg bg-surface/70 px-4 py-3">
+            <span class="flex items-center gap-2 font-semibold"><svg class="h-5 w-5 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Vinilo Tipo 1</span>
+            <strong id="resultado-pintura" class="font-mono text-ink"></strong>
+          </li>
+        </ul>
+        <p class="mb-4 flex items-start gap-2 rounded-lg bg-steel/10 px-4 py-3 text-sm text-ink/80">
+          <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-steel" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3 3 8l9 5 9-5-9-5Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13l9 5 9-5"/></svg>
+          <span>Como es obra gris, te recomendamos sumar <strong class="text-ink">Sellador PVA</strong> a tu pedido para que la pintura rinda más y quede uniforme. Pregúntanos la cantidad exacta para tu área.</span>
+        </p>
+        <p id="nota-flete" class="hidden mb-4 flex items-start gap-2 rounded-lg bg-hazard/10 px-4 py-3 text-sm text-hazard-deep">
+          <svg class="mt-0.5 h-5 w-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v4m0 4h.01M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          <span><strong>Nota:</strong> Para pedidos menores a 10 unidades, aplica un pequeño recargo por flete. ¡Añade más material para obtener envío gratis!</span>
+        </p>
+        <a id="btn-wa-calculadora" href="#" target="_blank" rel="noopener"
+           class="block w-full rounded-xl bg-wa py-4 text-center font-bold text-white shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-wa-deep hover:shadow-lift md:w-auto md:px-6">
+          Pedir este combo por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARACTERÍSTICAS TÉCNICAS (antes de precios: construir valor antes de mostrar el número) -->
+  <section class="border-t border-ink/10 bg-surface px-6 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-16 text-center">
+        <h2 class="font-display text-3xl font-900 text-ink md:text-4xl">Calidad profesional certificada</h2>
+        <p class="mt-2 text-lg text-ink/60">Ideal para maestros de obra y contratistas, tan fácil de aplicar que también funciona si prefieres comprar y hacerlo tú mismo.</p>
+      </div>
+
+      <h3 class="mb-6 border-l-4 border-hazard pl-3 font-display text-xl font-800 text-ink">Beneficios del Estuco Acrílico</h3>
+      <div class="mb-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
+        <div class="reveal group rounded-2xl border border-ink/10 bg-hazard/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <svg class="mb-3 h-8 w-8 text-hazard" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12 12 3l9 9M4.5 10.5V21a1 1 0 0 0 1 1h4.5v-6h4.5v6h4.5a1 1 0 0 0 1-1V10.5"/></svg>
+          <h4 class="font-bold text-ink">Multiusos</h4>
+          <p class="mt-1 text-sm text-ink/60">Apto para interiores y exteriores, sin cambiar de producto.</p>
+        </div>
+        <div class="reveal group rounded-2xl border border-ink/10 bg-hazard/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <svg class="mb-3 h-8 w-8 text-hazard" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3c3 3.5 6 7.14 6 10.5A6 6 0 1 1 6 13.5C6 10.14 9 6.5 12 3Z"/></svg>
+          <h4 class="font-bold text-ink">Alta resistencia a la humedad</h4>
+          <p class="mt-1 text-sm text-ink/60">Protege el muro en zonas húmedas o de alto tráfico.</p>
+        </div>
+        <div class="reveal group rounded-2xl border border-ink/10 bg-hazard/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <svg class="mb-3 h-8 w-8 text-hazard" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 14c2.5-5 5-5 7 0s4.5 5 7 0M3 9c2.5-5 5-5 7 0"/></svg>
+          <h4 class="font-bold text-ink">Excelente flexibilidad</h4>
+          <p class="mt-1 text-sm text-ink/60">Se adapta a los movimientos del muro: no se fisura.</p>
+        </div>
+        <div class="reveal group rounded-2xl border border-ink/10 bg-hazard/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <svg class="mb-3 h-8 w-8 text-hazard" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16 2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3Z"/></svg>
+          <h4 class="font-bold text-ink">Lijado suave</h4>
+          <p class="mt-1 text-sm text-ink/60">Menos polvo y esfuerzo. Acabado liso en tiempo récord.</p>
+        </div>
+        <div class="reveal group rounded-2xl border border-ink/10 bg-hazard/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <svg class="mb-3 h-8 w-8 text-hazard" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0-5 5M4 16v4m0 0h4m-4 0 5-5m11 5-5-5m5 5v-4m0 4h-4"/></svg>
+          <h4 class="font-bold text-ink">Buen poder de relleno</h4>
+          <p class="mt-1 text-sm text-ink/60">Cubre poros e imperfecciones del bloque fácilmente.</p>
+        </div>
+      </div>
+
+      <h3 class="mb-6 border-l-4 border-steel pl-3 font-display text-xl font-800 text-ink">Beneficios del Vinilo Tipo 1</h3>
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="reveal rounded-2xl border border-steel/15 bg-steel/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <h4 class="font-bold text-ink">Buena cobertura</h4>
+          <p class="mt-1 text-sm text-ink/60">Tapa colores oscuros desde la primera mano.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-steel/15 bg-steel/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <h4 class="font-bold text-ink">Alto rendimiento</h4>
+          <p class="mt-1 text-sm text-ink/60">Más metros cuadrados cubiertos por cada galón.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-steel/15 bg-steel/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <h4 class="font-bold text-ink">Lavabilidad premium</h4>
+          <p class="mt-1 text-sm text-ink/60">Fácil de limpiar con trapo húmedo sin perder color.</p>
+        </div>
+        <div class="reveal rounded-2xl border border-steel/15 bg-steel/5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lift-sm">
+          <h4 class="font-bold text-ink">Secado rápido</h4>
+          <p class="mt-1 text-sm text-ink/60">Optimiza el tiempo para entregar la obra terminada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA DE OBRAS -->
+  <!--
+    Cómo reemplazar estos placeholders por fotos/videos reales:
+    ver instrucciones completas en galeria/LEEME.txt
+
+    Resumen rápido:
+    - Foto: reemplaza el bloque "PLACEHOLDER FOTO" completo (la etiqueta div
+      con ese comentario) por:
+      [img src="galeria/tu-foto.jpg" alt="..." loading="lazy" decoding="async" class="h-full w-full object-cover"]
+    - Video adicional: sigue el mismo patrón que los videos ya agregados
+      más abajo (video-vinilo-1.mp4 / video-vinilo-2.mp4).
+  -->
+  <section id="galeria" class="scroll-mt-6 border-t border-ink/10 bg-surface px-6 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 text-center">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-steel">Galería</span>
+        <h2 class="mt-2 font-display text-3xl font-900 text-ink md:text-4xl">Obras reales, resultados reales</h2>
+        <p class="mt-2 text-lg text-ink/60">Fotos y videos de nuestros productos aplicados en proyectos reales.</p>
+      </div>
+
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6">
+        <div class="reveal group aspect-square overflow-hidden rounded-2xl border border-ink/10 shadow-lift-sm">
+          <img src="galeria/cuñete_estuco_1.jpg" alt="Caneca de Estuco Acrílico Santafe de 28kg, lista para despacho" loading="lazy" decoding="async" width="1200" height="1600" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        <div class="reveal group aspect-square overflow-hidden rounded-2xl border border-ink/10 shadow-lift-sm">
+          <img src="galeria/cuñetes_obra_estuco_1.jpg" alt="Inventario real de cuñetes de Estuco Acrílico Santafe almacenados para despacho a obra" loading="lazy" decoding="async" width="720" height="1280" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+        <div class="reveal group aspect-square overflow-hidden rounded-2xl border border-ink/10 shadow-lift-sm">
+          <img src="galeria/galon_estuco_1.jpg" alt="Presentación en galón de Estuco Acrílico Santafe para remates y ajustes menores" loading="lazy" decoding="async" width="1200" height="1600" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105">
+        </div>
+      </div>
+
+      <!-- VIDEOS: aplicación real de producto en obra -->
+      <div class="mx-auto mt-4 grid max-w-md grid-cols-2 gap-4 sm:max-w-2xl sm:grid-cols-3 md:mt-6 md:max-w-3xl md:gap-6">
+        <div class="reveal overflow-hidden rounded-2xl border border-ink/10 shadow-lift-sm">
+          <video controls preload="none" poster="galeria/video-vinilo-1-poster.jpg" class="aspect-[9/16] h-full w-full bg-ink/5 object-cover">
+            <source src="galeria/video-vinilo-1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="reveal overflow-hidden rounded-2xl border border-ink/10 shadow-lift-sm">
+          <video controls preload="none" poster="galeria/video-vinilo-2-poster.jpg" class="aspect-[9/16] h-full w-full bg-ink/5 object-cover">
+            <source src="galeria/video-vinilo-2.mp4" type="video/mp4">
+          </video>
+          </div>
+        <div class="reveal overflow-hidden rounded-2xl border border-ink/10 shadow-lift-sm">
+          <video controls preload="none" poster="galeria/Bolsas_de_estuco_en_obra-poster.jpg" class="aspect-[9/16] h-full w-full bg-ink/5 object-cover">
+            <source src="galeria/Bolsas_de_estuco_en_obra.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="precios" class="px-6 py-20">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-14 text-center">
+        <h2 class="font-display text-3xl font-900 text-ink md:text-4xl">Precios directos de fábrica</h2>
+        <p class="mt-2 text-lg text-ink/60">Mayor volumen = mayor ahorro para tu bolsillo.</p>
+      </div>
+
+      <!-- COMPARATIVA DE AHORRO -->
+      <div class="reveal mb-16 overflow-hidden rounded-3xl border border-ink/10 bg-surface shadow-lift-sm">
+        <div class="border-b border-ink/10 bg-gradient-to-r from-steel to-steel-deep px-6 py-6 text-center md:px-10">
+          <span class="font-mono text-xs font-semibold uppercase tracking-widest text-hazard">Comparativa real</span>
+          <h3 class="mt-2 font-display text-2xl font-800 text-white md:text-3xl">¿Por qué comprar directo de fábrica?</h3>
+          <p class="mx-auto mt-1 max-w-xl text-sm text-white/60">Mismo producto, mismo rendimiento. La diferencia está en quién le paga al intermediario: ferreterías tradicionales y grandes superficies, o tú.</p>
+        </div>
+        <div class="divide-y divide-ink/10">
+          <div class="px-6 py-6 md:px-10">
+            <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
+              <h4 class="font-display text-lg font-800 text-ink">Estuco Acrílico (Caneca)</h4>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 font-mono text-xs font-bold text-green-700">
+                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
+                Ahorras $33.000
+              </span>
+            </div>
+            <div class="space-y-2">
+              <div>
+                <div class="mb-1 flex items-center justify-between text-xs">
+                  <span class="font-mono uppercase tracking-wide text-ink/40">Ferreterías tradicionales</span>
+                  <span class="font-mono text-ink/50">$85.000</span>
+                </div>
+                <div class="h-2.5 w-full rounded-full bg-ink/10"><div class="h-full rounded-full bg-ink/25" style="width:100%"></div></div>
+              </div>
+              <div>
+                <div class="mb-1 flex items-center justify-between text-xs">
+                  <span class="font-mono uppercase tracking-wide text-steel">MuroListo</span>
+                  <span class="font-mono font-bold text-ink">$52.000</span>
+                </div>
+                <div class="h-2.5 w-full rounded-full bg-ink/10"><div class="h-full rounded-full bg-steel" style="width:61%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-6 md:px-10">
+            <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
+              <h4 class="font-display text-lg font-800 text-ink">Vinilo Tipo 1 (Caneca)</h4>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 font-mono text-xs font-bold text-green-700">
+                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
+                Ahorras $115.000
+              </span>
+            </div>
+            <div class="space-y-2">
+              <div>
+                <div class="mb-1 flex items-center justify-between text-xs">
+                  <span class="font-mono uppercase tracking-wide text-ink/40">Ferreterías tradicionales</span>
+                  <span class="font-mono text-ink/50">$330.000</span>
+                </div>
+                <div class="h-2.5 w-full rounded-full bg-ink/10"><div class="h-full rounded-full bg-ink/25" style="width:100%"></div></div>
+              </div>
+              <div>
+                <div class="mb-1 flex items-center justify-between text-xs">
+                  <span class="font-mono uppercase tracking-wide text-steel">MuroListo</span>
+                  <span class="font-mono font-bold text-ink">$215.000</span>
+                </div>
+                <div class="h-2.5 w-full rounded-full bg-ink/10"><div class="h-full rounded-full bg-steel" style="width:65%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="px-6 py-6 md:px-10">
+            <div class="mb-3 flex flex-wrap items-center justify-between gap-2">
+              <h4 class="font-display text-lg font-800 text-ink">Vinilo Coraza (Exterior)</h4>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 font-mono text-xs font-bold text-green-700">
+                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m0 0-6-6m6 6 6-6"/></svg>
+                Ahorras $205.000
+              </span>
+            </div>
+            <div class="space-y-2">
+              <div>
+                <div class="mb-1 flex items-center justify-between text-xs">
+                  <span class="font-mono uppercase tracking-wide text-ink/40">Ferreterías tradicionales</span>
+                  <span class="font-mono text-ink/50">$470.000</span>
+                </div>
+                <div class="h-2.5 w-full rounded-full bg-ink/10"><div class="h-full rounded-full bg-ink/25" style="width:100%"></div></div>
+              </div>
+              <div>
+                <div class="mb-1 flex items-center justify-between text-xs">
+                  <span class="font-mono uppercase tracking-wide text-steel">MuroListo</span>
+                  <span class="font-mono font-bold text-ink">$265.000</span>
+                </div>
+                <div class="h-2.5 w-full rounded-full bg-ink/10"><div class="h-full rounded-full bg-steel" style="width:56%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal mb-16 overflow-hidden rounded-3xl border border-ink/10 shadow-lift-sm">
+        <img src="MuroListo_2.jpg" alt="Comparativo de calidad: Productos Santafe frente a otras marcas del mercado" loading="lazy" decoding="async" width="1536" height="1024" class="h-full w-full object-cover">
+      </div>
+
+      <!-- ESTUCO -->
+      <div class="mb-6 flex items-center gap-3">
+        <span class="font-mono text-sm font-bold text-hazard-deep">01</span>
+        <h3 class="font-display text-2xl font-800 text-ink">Estuco 100% Acrílico Premium</h3>
+        <span class="h-px flex-1 bg-ink/10"></span>
+      </div>
+
+      <div class="mb-20 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <!-- Bolsa -->
+        <div class="reveal group flex flex-col overflow-hidden rounded-2xl border border-ink/10 bg-surface shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="aspect-[11/6] overflow-hidden bg-ink/5">
+            <img src="galeria/Bolsa-estuco.jpg" alt="Bolsa de Estuco Acrílico Santafe de 28kg" loading="lazy" decoding="async" width="960" height="1280"
+                 class="h-full w-full object-cover object-[center_30%] opacity-90 transition-transform duration-500 group-hover:scale-105">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="mb-1 text-sm font-semibold text-ink/50">Formato económico</div>
+            <h4 class="font-display text-2xl font-800 text-ink">Bolsa 28kg</h4>
+            <div class="mt-2 font-mono text-3xl font-700 text-steel">$46.000</div>
+            <ul class="mt-4 mb-6 flex-1 space-y-2 text-sm text-ink/70">
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Ideal si ya tienes baldes en obra</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Excelente rentabilidad</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Despacho directo</li>
+            </ul>
+            <a href="https://wa.me/573058570653?text=Hola%2C%20quiero%20cotizar%20Bolsas%20de%20Estuco%20de%2028kg" target="_blank" rel="noopener"
+               class="block rounded-xl bg-concrete-2 py-3 text-center font-bold text-ink transition-colors duration-300 hover:bg-navy hover:text-white">Cotizar bolsa</a>
+          </div>
+        </div>
+
+        <!-- Caneca (destacado) -->
+        <div class="reveal combo-border relative flex flex-col overflow-hidden rounded-2xl bg-navy text-white shadow-lift md:-translate-y-4">
+          <span class="absolute left-1/2 top-4 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-hazard px-4 py-1 text-xs font-bold uppercase tracking-wide text-navy shadow">El más vendido</span>
+          <div class="relative aspect-[11/6] overflow-hidden">
+            <img src="galeria/cuñetes_obra_estuco_1.jpg" alt="Cuñetes de Estuco Acrílico Santafe de 28kg, inventario real listo para despacho" loading="lazy" decoding="async" width="720" height="1280"
+                 class="h-full w-full object-cover object-[center_30%] opacity-70">
+            <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+          </div>
+          <div class="relative z-10 flex flex-1 flex-col p-6">
+            <div class="mb-1 text-sm font-semibold text-white/50">Protección y comodidad</div>
+            <h4 class="font-display text-2xl font-800 text-white">Caneca (Cuñete) 28kg</h4>
+            <div class="mt-2 flex items-baseline gap-2">
+              <span class="font-mono text-4xl font-700 text-hazard">$52.000</span>
+              <span class="font-mono text-sm text-white/40 line-through">$60.000+</span>
+            </div>
+            <ul class="mt-4 mb-6 flex-1 space-y-2 text-sm text-white/80">
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 flex-shrink-0 text-hazard" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Conserva mejor la humedad</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 flex-shrink-0 text-hazard" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Balde reutilizable de alta resistencia</li>
+              <li class="flex items-center gap-2"><svg class="h-4 w-4 flex-shrink-0 text-hazard" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Fácil de transportar en obra</li>
+            </ul>
+            <a href="https://wa.me/573058570653?text=Hola%2C%20quiero%20aprovechar%20el%20precio%20de%20la%20Caneca%20de%20Estuco%20de%2028kg" target="_blank" rel="noopener"
+               class="block rounded-xl bg-hazard py-4 text-center text-lg font-bold text-navy shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-hazard-deep hover:text-white hover:shadow-lift">Cotizar cuñetes ahora</a>
+          </div>
+        </div>
+
+        <!-- 1/2 Caneca (señuelo) -->
+        <div class="reveal flex flex-col justify-center rounded-2xl border border-ink/10 bg-surface/70 p-6 opacity-90">
+          <div class="mb-1 text-sm font-semibold text-ink/50">Formato medio</div>
+          <h4 class="font-display text-2xl font-800 text-ink">1/2 Caneca</h4>
+          <div class="mt-2 font-mono text-3xl font-700 text-ink/60">$42.000</div>
+          <p class="mt-4 rounded-lg bg-hazard/10 p-3 text-sm font-bold text-hazard-deep">¡Por solo $10.000 más llevas el doble (Caneca)!</p>
+          <p class="mt-4 text-sm text-ink/50">Solo para remates o ajustes menores. No recomendado para obras desde cero.</p>
+          <a href="https://wa.me/573058570653?text=Hola%2C%20info%20de%20precios%20de%20estuco" target="_blank" rel="noopener"
+             class="mt-6 block rounded-xl bg-concrete-2 py-3 text-center font-bold text-ink/70 transition-colors duration-300 hover:bg-navy hover:text-white">Consultar</a>
+        </div>
+      </div>
+
+      <!-- VINILO -->
+      <div class="mb-6 flex items-center gap-3">
+        <span class="font-mono text-sm font-bold text-steel">02</span>
+        <h3 class="font-display text-2xl font-800 text-ink">Vinilo Premium (Tipo 1) Lavable</h3>
+        <span class="h-px flex-1 bg-ink/10"></span>
+      </div>
+
+      <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
+        <!-- Galón -->
+        <div class="reveal flex h-full flex-col rounded-2xl border border-ink/10 bg-surface p-6 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="mb-1 text-sm font-semibold text-ink/50">Para remates</div>
+          <h4 class="font-display text-2xl font-800 text-ink">Galón</h4>
+          <div class="mt-2 font-mono text-3xl font-700 text-ink/60">$58.000</div>
+          <p class="mt-4 flex-1 text-sm text-ink/60">Ideal para detalles menores. Rinde ~19 m² a dos manos.</p>
+        </div>
+
+        <!-- Caneca Vinilo (destacado) -->
+        <div class="reveal relative flex flex-col overflow-hidden rounded-2xl border-2 border-steel bg-steel/5 shadow-lift transition-all duration-300 hover:-translate-y-1 md:-translate-y-2">
+          <span class="absolute left-1/2 top-4 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-steel px-4 py-1 text-xs font-bold uppercase tracking-wide text-white shadow">Mejor rendimiento</span>
+          <div class="aspect-[11/6] overflow-hidden bg-steel/10">
+            <img src="galeria/cuñete-vinilo-tipo1.jpg" alt="Caneca de Vinilo Tipo 1 (5 galones) Santafe" loading="lazy" decoding="async" width="960" height="1280"
+                 class="h-full w-full object-cover object-[center_32%] opacity-80">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <h4 class="font-display text-2xl font-800 text-ink">Caneca (5 Galones)</h4>
+            <div class="mt-2 font-mono text-4xl font-700 text-steel">$215.000</div>
+            <p class="mt-4 mb-6 flex-1 text-sm font-medium text-ink/70">Máxima economía. Rinde de 90 a 100 m² a dos manos. Lavabilidad premium.</p>
+            <a href="https://wa.me/573058570653?text=Hola%2C%20quiero%20cotizar%20la%20Caneca%20de%20Vinilo%20Tipo%201%20a%20215mil" target="_blank" rel="noopener"
+               class="block rounded-xl bg-steel py-4 text-center text-lg font-bold text-white shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-steel-deep hover:shadow-lift">Pedir vinilo</a>
+          </div>
+        </div>
+
+        <!-- 1/2 Caneca Vinilo (señuelo) -->
+        <div class="reveal flex h-full flex-col rounded-2xl border border-ink/10 bg-surface p-6 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="mb-1 text-sm font-semibold text-ink/50">Formato medio</div>
+          <h4 class="font-display text-2xl font-800 text-ink">1/2 Caneca</h4>
+          <div class="mt-2 font-mono text-3xl font-700 text-ink/60">$175.000</div>
+          <p class="mt-4 flex-1 rounded-lg bg-hazard/10 p-3 text-sm font-bold text-hazard-deep">¡Lleva la entera por solo $40.000 más!</p>
+        </div>
+      </div>
+
+      <!-- LÍNEA PREMIUM Y ESPECIALIZADA -->
+      <div class="mb-6 flex items-center gap-3">
+        <span class="font-mono text-sm font-bold text-hazard-deep">03</span>
+        <h3 class="font-display text-2xl font-800 text-ink">Línea Premium y Especializada</h3>
+        <span class="h-px flex-1 bg-ink/10"></span>
+      </div>
+      <p class="mb-6 -mt-4 text-sm text-ink/60">Productos para necesidades puntuales de tu proyecto: interiores, exteriores o preparar el muro antes de pintar.</p>
+
+      <div class="mb-20 grid grid-cols-1 gap-8 md:grid-cols-3">
+        <!-- Vinilo Tipo 2 -->
+        <div class="reveal flex flex-col overflow-hidden rounded-2xl border border-ink/10 bg-steel/5 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="aspect-[11/6] overflow-hidden bg-steel/10">
+            <img src="galeria/Cuñete-vinilo-tipo2.jpg" alt="Caneca de Vinilo Tipo 2 Santafe" loading="lazy" decoding="async" width="960" height="1280"
+                 class="h-full w-full object-cover object-[center_32%]">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <span class="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-steel/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-steel">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="11" height="5" rx="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 7.5h3M17 7.5v7M14 14.5h6"/></svg>
+              Interiores
+            </span>
+            <h4 class="font-display text-2xl font-800 text-ink">Vinilo Tipo 2</h4>
+            <div class="mt-2 font-mono text-3xl font-700 text-steel">$185.000</div>
+            <p class="mt-3 flex-1 text-sm text-ink/60">La versión estándar para interiores: buena cobertura y buen acabado, a un precio más accesible que el Vinilo Tipo 1.</p>
+            <a href="https://wa.me/573058570653?text=Hola%2C%20quiero%20cotizar%20la%20Caneca%20de%20Vinilo%20Tipo%202%20a%20185mil" target="_blank" rel="noopener"
+               class="mt-6 block rounded-xl bg-concrete-2 py-3 text-center font-bold text-ink transition-colors duration-300 hover:bg-navy hover:text-white">Cotizar Vinilo Tipo 2</a>
+          </div>
+        </div>
+
+        <!-- Vinilo Coraza -->
+        <div class="reveal flex flex-col overflow-hidden rounded-2xl border border-hazard/30 bg-hazard/5 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="aspect-[11/6] overflow-hidden bg-hazard/10">
+            <img src="galeria/Cuñete-vinilopremium-tipo-coraza.jpg" alt="Caneca de Vinilo Premium Tipo Coraza Santafe, para fachadas e interiores" loading="lazy" decoding="async" width="960" height="1280"
+                 class="h-full w-full object-cover object-[center_30%]">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <span class="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-hazard/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-hazard-deep">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+              Exterior · Máxima protección
+            </span>
+            <h4 class="font-display text-2xl font-800 text-ink">Vinilo Coraza</h4>
+            <div class="mt-2 font-mono text-3xl font-700 text-hazard-deep">$265.000</div>
+            <p class="mt-3 flex-1 text-sm text-ink/60">Para fachadas, patios y muros expuestos al sol y la lluvia: resiste el clima sin decolorarse ni desprenderse.</p>
+            <a href="https://wa.me/573058570653?text=Hola%2C%20quiero%20cotizar%20la%20Caneca%20de%20Vinilo%20Coraza%20%28exterior%29%20a%20265mil" target="_blank" rel="noopener"
+               class="mt-6 block rounded-xl bg-hazard py-3 text-center font-bold text-navy transition-colors duration-300 hover:bg-hazard-deep hover:text-white">Cotizar Vinilo Coraza</a>
+          </div>
+        </div>
+
+        <!-- PVA Sellador -->
+        <div class="reveal flex flex-col overflow-hidden rounded-2xl border border-ink/10 bg-surface shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="aspect-[11/6] overflow-hidden bg-concrete-2">
+            <img src="galeria/Cuñete-pva.jpg" alt="Caneca de Sellador PVA Santafe" loading="lazy" decoding="async" width="960" height="1280"
+                 class="h-full w-full object-cover object-[center_32%]">
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <span class="mb-3 inline-flex w-fit items-center gap-2 rounded-full bg-concrete-2 px-3 py-1 text-xs font-bold uppercase tracking-wide text-ink/60">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3 3 8l9 5 9-5-9-5Z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13l9 5 9-5"/></svg>
+              Se aplica antes de pintar
+            </span>
+            <h4 class="font-display text-2xl font-800 text-ink">PVA Sellador</h4>
+            <div class="mt-2 font-mono text-3xl font-700 text-ink">$75.000</div>
+            <p class="mt-3 text-sm text-ink/60">¿Para qué sirve? Se aplica sobre el muro antes de pintar: sella la superficie para que no absorba la pintura de forma dispareja. El color queda uniforme, sin manchas ni parches, y tu pintura rinde más.</p>
+            <p class="mt-2 flex-1 text-xs font-semibold text-ink/45">Recomendado en muros nuevos (obra gris) o muy porosos.</p>
+            <a href="https://wa.me/573058570653?text=Hola%2C%20quiero%20cotizar%20la%20Caneca%20de%20Sellador%20PVA%20a%2075mil" target="_blank" rel="noopener"
+               class="mt-6 block rounded-xl bg-concrete-2 py-3 text-center font-bold text-ink transition-colors duration-300 hover:bg-navy hover:text-white">Cotizar Sellador PVA</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMBOS PROMOCIONALES -->
+      <div id="combos" class="mt-16 scroll-mt-6">
+        <div class="mb-10 text-center">
+          <span class="inline-block rounded-full bg-red-500 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white">Combos promocionales</span>
+          <h3 class="mt-4 font-display text-3xl font-900 text-ink">Elige el combo ideal para tu proyecto</h3>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-stretch lg:grid-cols-3">
+          <!-- Combo Remodelación (Hogar) -->
+          <div class="reveal flex flex-col rounded-3xl border border-steel/20 bg-steel/5 p-8 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift md:p-10">
+            <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-steel/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-steel">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12 12 3l9 9M4.5 10.5V21a1 1 0 0 0 1 1h4.5v-6h4.5v6h4.5a1 1 0 0 0 1-1V10.5"/></svg>
+              Para tu hogar
+            </span>
+            <h4 class="font-display text-2xl font-800 text-ink">Combo Remodelación</h4>
+            <p class="mt-2 text-ink/60">Ideal si vas a estucar y pintar tu apartamento completo.</p>
+            <ul class="mt-6 mb-6 space-y-2 text-ink/80">
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                2 Canecas de Estuco Acrílico (28kg)
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                1 Caneca de Vinilo Tipo 1 (5gal)
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <div class="font-mono text-4xl font-900 text-ink">$319.000</div>
+              <p class="mt-3 flex items-start gap-2 rounded-lg bg-concrete-2 px-3 py-2 text-xs font-medium text-ink/60">
+                <svg class="mt-0.5 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 16.5V6a1 1 0 011-1h9a1 1 0 011 1v10.5M3 16.5h11m-11 0a1.5 1.5 0 003 0m8-10h3.28a1 1 0 01.948.684l1.44 4.316M14 6.5v10m7 0h-7m7 0a1.5 1.5 0 01-3 0m-11 0a1.5 1.5 0 01-3 0"/></svg>
+                Aplica tarifa plana de flete económico en la ciudad.
+              </p>
+              <a href="https://wa.me/573058570653?text=%C2%A1Hola%21%20Me%20interesa%20el%20%27Combo%20Remodelaci%C3%B3n%27%20de%203%20unidades%20%28%24319.000%29.%20Quiero%20confirmar%20el%20costo%20del%20flete%20para%20mi%20direcci%C3%B3n." target="_blank" rel="noopener"
+                 class="mt-5 block rounded-xl bg-steel py-4 text-center font-bold text-white shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-steel-deep hover:shadow-lift">
+                Pedir Combo Remodelación
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo Fachada Exterior (Premium) -->
+          <div class="reveal flex flex-col rounded-3xl border border-hazard/25 bg-hazard/5 p-8 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift md:p-10">
+            <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-hazard/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-hazard-deep">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+              Fachadas y exteriores
+            </span>
+            <h4 class="font-display text-2xl font-800 text-ink">Combo Fachada Exterior</h4>
+            <p class="mt-2 text-ink/60">Para patios, fachadas y muros expuestos al clima.</p>
+            <ul class="mt-6 mb-6 space-y-2 text-ink/80">
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-hazard-deep" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                2 Canecas de Estuco Acrílico (28kg)
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-hazard-deep" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                1 Caneca de Vinilo Coraza
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <div class="font-mono text-4xl font-900 text-ink">$369.000</div>
+              <a href="https://wa.me/573058570653?text=%C2%A1Hola%21%20Me%20interesa%20el%20%27Combo%20Fachada%20Exterior%27%20%28%24369.000%29.%20Quiero%20cotizar%20el%20env%C3%ADo." target="_blank" rel="noopener"
+                 class="mt-5 block rounded-xl bg-hazard py-4 text-center font-bold text-navy shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-hazard-deep hover:text-white hover:shadow-lift">
+                Pedir Combo Fachada Exterior
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo Obra Blanca (Pintores) -->
+          <div class="reveal flex flex-col rounded-3xl border border-steel/20 bg-steel/5 p-8 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift md:p-10">
+            <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-steel/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-steel">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="11" height="5" rx="1.5"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 7.5h3M17 7.5v7M14 14.5h6"/></svg>
+              Para pintores
+            </span>
+            <h4 class="font-display text-2xl font-800 text-ink">Combo Obra Blanca</h4>
+            <p class="mt-2 text-ink/60">Preparación de superficie profesional antes de pintar.</p>
+            <ul class="mt-6 mb-6 space-y-2 text-ink/80">
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                1 Caneca de Sellador PVA
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                1 Caneca de Vinilo Tipo 1
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <div class="font-mono text-4xl font-900 text-ink">$290.000</div>
+              <a href="https://wa.me/573058570653?text=%C2%A1Hola%21%20Me%20interesa%20el%20%27Combo%20Obra%20Blanca%27%20%28%24290.000%29.%20%C2%BFMe%20ayudan%20a%20coordinar%20mi%20pedido%3F" target="_blank" rel="noopener"
+                 class="mt-5 block rounded-xl bg-steel py-4 text-center font-bold text-white shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-steel-deep hover:shadow-lift">
+                Pedir Combo Obra Blanca
+              </a>
+            </div>
+          </div>
+
+          <!-- Combo Obra Gris (Alto volumen) -->
+          <div class="reveal flex flex-col rounded-3xl border border-ink/15 bg-concrete-2 p-8 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift md:p-10">
+            <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-ink/5 px-3 py-1 text-xs font-bold uppercase tracking-wide text-ink/70">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="8" height="5"/><rect x="13" y="4" width="8" height="5"/><rect x="7" y="10" width="8" height="5"/><rect x="3" y="16" width="8" height="5"/><rect x="13" y="16" width="8" height="5"/></svg>
+              Alto volumen · Obra gris
+            </span>
+            <h4 class="font-display text-2xl font-800 text-ink">Combo Obra Gris</h4>
+            <p class="mt-2 text-ink/60">Para el volumen fuerte de estucado inicial de tu proyecto.</p>
+            <ul class="mt-6 mb-6 space-y-2 text-ink/80">
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                9 Canecas de Estuco Acrílico (28kg)
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-steel" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                1 Caneca de Vinilo Tipo 1 (5gal)
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <div class="font-mono text-4xl font-900 text-ink">$683.000</div>
+              <p class="mt-1 text-xs text-ink/40">10 unidades grandes puestas en obra</p>
+              <span class="mt-3 inline-flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 font-mono text-xs font-bold text-green-700">
+                <svg class="h-3.5 w-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Envío GRATIS incluido (10 unidades)
+              </span>
+              <a href="https://wa.me/573058570653?text=%C2%A1Hola%21%20Quiero%20pedir%20el%20%27Combo%20Obra%20Gris%27%20de%2010%20unidades%20%28%24683.000%29%20con%20env%C3%ADo%20GRATIS." target="_blank" rel="noopener"
+                 class="mt-5 block rounded-xl bg-navy py-4 text-center font-bold text-white shadow-lift-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-steel hover:shadow-lift">
+                Pedir Combo Obra Gris
+              </a>
+            </div>
+          </div>
+
+          <!-- Súper Combo Contratista (Profesionales) -->
+          <div class="reveal combo-border relative flex flex-col overflow-hidden rounded-3xl bg-navy p-8 pt-14 text-white shadow-lift md:-translate-y-3 md:p-10 md:pt-16">
+            <span class="absolute left-1/2 top-4 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-hazard px-4 py-1 text-xs font-bold uppercase tracking-wide text-navy shadow">Mejor inversión</span>
+            <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full bg-hazard/15 px-3 py-1 text-xs font-bold uppercase tracking-wide text-hazard">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7h-3V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2ZM9 5h6v2H9V5Z"/></svg>
+              Para profesionales
+            </span>
+            <h4 class="font-display text-2xl font-800 text-white">Súper Combo Contratista</h4>
+            <p class="mt-2 text-white/60">El balance perfecto para terminar un apartamento completo.</p>
+            <ul class="mt-6 mb-6 space-y-2 text-white/80">
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-hazard" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                8 Canecas de Estuco Acrílico (28kg)
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="h-5 w-5 flex-shrink-0 text-hazard" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                2 Canecas de Vinilo Tipo 1 (5gal)
+              </li>
+            </ul>
+            <div class="mt-auto">
+              <div class="font-mono text-5xl font-900 text-hazard">$846.000</div>
+              <p class="mt-1 text-xs text-white/40">10 unidades grandes puestas en obra</p>
+              <div class="mt-4 flex items-center gap-2 rounded-xl bg-hazard px-4 py-3 text-sm font-black uppercase tracking-wide text-navy shadow-lift-sm">
+                <svg class="h-5 w-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 16.5V6a1 1 0 011-1h9a1 1 0 011 1v10.5M3 16.5h11m-11 0a1.5 1.5 0 003 0m8-10h3.28a1 1 0 01.948.684l1.44 4.316M14 6.5v10m7 0h-7m7 0a1.5 1.5 0 01-3 0m-11 0a1.5 1.5 0 01-3 0"/></svg>
+                ¡Envío GRATIS directo de fábrica en nuestro camión!
+              </div>
+              <a href="https://wa.me/573058570653?text=%C2%A1Hola%21%20Quiero%20pedir%20el%20%27S%C3%BAper%20Combo%20Contratista%27%20de%2010%20unidades%20%28%24846.000%29%20con%20env%C3%ADo%20GRATIS." target="_blank" rel="noopener"
+                 class="mt-5 block rounded-xl bg-hazard py-4 text-center text-lg font-bold text-navy shadow-lift transition-all duration-300 hover:-translate-y-0.5 hover:bg-hazard-deep hover:text-white hover:shadow-lift">
+                Pedir Súper Combo Contratista
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aclaración logística y de pago -->
+      <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <div class="flex items-center gap-3 rounded-xl border border-ink/10 bg-surface p-4 text-sm font-medium text-ink/70 shadow-lift-sm">
+          <svg class="h-6 w-6 flex-shrink-0 text-steel" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 16.5V6a1 1 0 011-1h9a1 1 0 011 1v10.5M3 16.5h11m-11 0a1.5 1.5 0 003 0m8-10h3.28a1 1 0 01.948.684l1.44 4.316M14 6.5v10m7 0h-7m7 0a1.5 1.5 0 01-3 0m-11 0a1.5 1.5 0 01-3 0"/></svg>
+          <p><strong class="text-ink">Despacho GRATIS</strong> directo a tu obra a partir de 10 unidades grandes. Para pedidos menores, coordinamos un flete económico.</p>
+        </div>
+        <div class="flex items-center gap-3 rounded-xl border border-ink/10 bg-surface p-4 text-sm font-medium text-ink/70 shadow-lift-sm">
+          <svg class="h-6 w-6 flex-shrink-0 text-hazard" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0Z"/></svg>
+          <p><strong class="text-ink">Pago 100% anticipado</strong> mediante cotización formal. No manejamos pago contra entrega.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRA HISTORIA -->
+  <!-- Foto placeholder: reemplaza el bloque "PLACEHOLDER FOTO NOSOTROS" por
+       <img src="Nosotros-obra.webp" alt="Hermanos trabajando en obra blanca y estuco" loading="lazy" decoding="async" class="h-full w-full object-cover"> -->
+  <section id="nosotros" class="scroll-mt-6 border-t border-ink/10 bg-concrete px-6 py-20">
+    <div class="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center md:gap-16">
+      <div class="reveal">
+        <span class="font-mono text-xs font-semibold uppercase tracking-widest text-steel">Nuestra Historia</span>
+        <h2 class="mt-2 font-display text-3xl font-900 leading-tight text-ink md:text-4xl">De estucar para ahorrar, a conectarte directo con la fábrica.</h2>
+
+        <div class="mt-6 space-y-4 text-ink/70">
+          <p>Todo empezó con un apartamento en obra gris y un presupuesto ajustado. Para ahorrar unos miles de pesos en la remodelación, mis hermanos y yo decidimos meterle mano a las paredes y estucar nosotros mismos.</p>
+          <p>Rápidamente nos estrellamos con la realidad: al ir a comprar los materiales, los precios en las ferreterías tradicionales estaban por las nubes. Nos dimos cuenta de que estábamos pagando una cadena de intermediarios que encarecían el producto sin sumarle valor.</p>
+          <p>Decidimos saltarnos la cadena y llegar a la fuente. Así conocimos la calidad industrial de Productos SantaFe. Al ver el abismo entre el precio real de fábrica y lo que nos cobraban en mostrador, supimos que teníamos que hacer algo.</p>
+          <p>Así nació MuroListo. Hoy somos el brazo digital autorizado de la fábrica para llevar esa misma calidad premium, sin intermediarios y a precio justo, directo a la puerta de tu obra.</p>
+        </div>
+
+        <div class="mt-8 border-l-4 border-hazard pl-4">
+          <p class="font-display text-lg font-800 text-ink">El Equipo de MuroListo</p>
+          <p class="text-sm text-ink/50">Contratistas, emprendedores y aliados de tu bolsillo.</p>
+        </div>
+      </div>
+
+      <div class="reveal relative">
+        <div class="aspect-[4/5] w-full overflow-hidden rounded-3xl border border-ink/10 shadow-lift">
+          <img src="MuroListo_4.jpeg" alt="Aplicación profesional de Estuco Acrílico Santafe sobre muro con llana" loading="lazy" decoding="async" width="1024" height="1536" class="h-full w-full object-cover">
+        </div>
+
+        <!-- Tarjeta flotante -->
+        <div class="absolute -bottom-6 left-4 max-w-[240px] rounded-2xl bg-navy p-5 text-white shadow-lift md:-bottom-8 md:-left-8">
+          <div class="mb-2 flex h-9 w-9 items-center justify-center rounded-full bg-hazard text-navy">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg>
+          </div>
+          <p class="font-display text-sm font-800">Conocemos la obra</p>
+          <p class="mt-1 text-xs text-white/70">Sabemos lo que cuesta ganarse cada peso en una construcción. Por eso protegemos tu margen de ganancia.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO TRABAJAMOS -->
+  <section id="como-comprar" class="border-t border-ink/10 bg-concrete-2/40 px-6 py-20 text-center">
+    <div class="mx-auto max-w-5xl">
+      <h2 class="mb-12 font-display text-3xl font-900 text-ink md:text-4xl">¿Cómo comprar con nosotros?</h2>
+      <div class="relative grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div class="absolute left-1/4 right-1/4 top-8 hidden h-px bg-ink/15 md:block"></div>
+
+        <div class="reveal relative rounded-2xl border border-ink/10 bg-surface p-8 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border-4 border-concrete bg-steel font-display text-xl font-800 text-white shadow">1</div>
+          <h3 class="mb-2 font-display text-xl font-800 text-ink">Cotizas por WhatsApp</h3>
+          <p class="text-ink/60">Dinos qué material necesitas o usa la calculadora. Te enviamos tu cotización formal.</p>
+        </div>
+        <div class="reveal relative rounded-2xl border border-ink/10 bg-surface p-8 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border-4 border-concrete bg-steel font-display text-xl font-800 text-white shadow">2</div>
+          <h3 class="mb-2 font-display text-xl font-800 text-ink">Pagas y agendamos despacho</h3>
+          <p class="text-ink/60">Con el pago anticipado de tu cotización, programamos tu ruta hacia la obra.</p>
+        </div>
+        <div class="reveal relative rounded-2xl border border-ink/10 bg-surface p-8 shadow-lift-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lift">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full border-4 border-concrete bg-hazard font-display text-xl font-800 text-navy shadow">3</div>
+          <h3 class="mb-2 font-display text-xl font-800 text-ink">Recibes en tu obra</h3>
+          <p class="text-ink/60">Tu pedido llega directo a la puerta de tu proyecto, listo para trabajar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative overflow-hidden bg-navy px-6 py-14 text-center text-white">
+    <div class="absolute inset-x-0 top-0 h-1.5 hazard-stripe"></div>
+    <div class="mx-auto max-w-4xl">
+      <span class="font-display text-2xl font-900 tracking-tight">MURO<span class="text-steel">LISTO</span></span>
+      <p class="mx-auto mt-4 max-w-xl text-white/60">Distribuidor oficial de Productos Santafe. Soluciones en acabados de construcción para maestros de obra, contratistas y hogares.</p>
+      <p class="mt-6 text-sm text-white/40">&copy; <span id="anio-actual"></span> MuroListo. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var NUMERO_WHATSAPP = '573058570653';
+
+      document.getElementById('anio-actual').textContent = new Date().getFullYear();
+
+      /* --- Menú móvil --- */
+      var navToggle = document.getElementById('nav-toggle');
+      var navLinks = document.getElementById('nav-links');
+      navToggle.addEventListener('click', function () {
+        var isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      /* --- Scroll-reveal sutil --- */
+      var revealEls = document.querySelectorAll('.reveal');
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if ('IntersectionObserver' in window && !prefersReducedMotion) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('in'); });
+      }
+
+      /* --- Calculadora --- */
+      function calcularMateriales() {
+        var m2Input = document.getElementById('m2-input').value;
+        var m2Piso = parseFloat(m2Input);
+        var resultados = document.getElementById('resultados-calculadora');
+
+        if (isNaN(m2Piso) || m2Piso <= 0) {
+          alert('Por favor ingresa un número válido de metros cuadrados.');
+          return;
+        }
+
+        var m2Total = m2Piso * 3;
+        var cunetesEstuco = Math.ceil(m2Total / 8.5);
+        var totalGalonesNecesarios = m2Total / 19;
+        var canecasPintura = Math.floor(totalGalonesNecesarios / 5);
+        var galonesRestantes = Math.ceil(totalGalonesNecesarios % 5);
+        if (galonesRestantes === 5) {
+          canecasPintura += 1;
+          galonesRestantes = 0;
+        }
+
+        var pinturaTexto = '';
+        if (canecasPintura > 0) {
+          pinturaTexto += canecasPintura + (canecasPintura === 1 ? ' Caneca' : ' Canecas');
+        }
+        if (galonesRestantes > 0) {
+          if (canecasPintura > 0) pinturaTexto += ' y ';
+          pinturaTexto += galonesRestantes + (galonesRestantes === 1 ? ' Galón' : ' Galones');
+        }
+        if (pinturaTexto === '') pinturaTexto = '1 Galón';
+
+        document.getElementById('resultado-estuco').textContent = cunetesEstuco + ' Cuñetes/Bolsas (28kg)';
+        document.getElementById('resultado-pintura').textContent = pinturaTexto;
+
+        var totalUnidades = cunetesEstuco + canecasPintura + galonesRestantes;
+        document.getElementById('nota-flete').classList.toggle('hidden', totalUnidades >= 10);
+
+        resultados.classList.add('is-visible');
+        resultados.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+        var mensaje = 'Hola, usé la calculadora de la página. Para mi espacio de ' + m2Piso + 'm², necesito cotizar:\n' +
+          '- ' + cunetesEstuco + ' unidades de Estuco (28kg)\n' +
+          '- ' + pinturaTexto + ' de Vinilo Tipo 1.\n' +
+          '¿Me confirmas disponibilidad, flete, y si necesito Sellador PVA para mi obra gris?';
+
+        document.getElementById('btn-wa-calculadora').href = 'https://wa.me/' + NUMERO_WHATSAPP + '?text=' + encodeURIComponent(mensaje);
+      }
+
+      document.getElementById('btn-calcular').addEventListener('click', calcularMateriales);
+      document.getElementById('m2-input').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') calcularMateriales();
+      });
+    })();
+  </script>
+</body>
+</html>

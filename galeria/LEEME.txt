@@ -1,0 +1,33 @@
+Carpeta para las fotos y videos reales de obras/proyectos.
+
+Ya agregados: video-vinilo-1.mp4 y video-vinilo-2.mp4 (con sus posters),
+ambos ya están enlazados en la sección #galeria de index.html.
+
+Nota sobre las 9 fotos "WhatsApp Image..." en la carpeta raíz del proyecto:
+son piezas publicitarias genéricas generadas con IA (traen texto ilegible,
+un teléfono de ejemplo sin reemplazar y logos deformados). No se usaron en
+la página. Si quieres usar alguna igual, revísala de cerca primero.
+
+CÓMO AGREGAR UNA FOTO
+1. Copia el archivo aquí, ej: galeria/fachada-cliente-1.jpg
+   - Formato: .jpg o .webp
+   - Ancho recomendado: ~1600px de ancho (no hace falta más para web)
+   - Peso ideal: menos de 300 KB por foto (usa https://squoosh.app si pesa más)
+2. En index.html, dentro de <section id="galeria">, reemplaza un bloque
+   marcado "PLACEHOLDER" completo por:
+   <img src="galeria/fachada-cliente-1.jpg" alt="Descripción real de la foto"
+        loading="lazy" decoding="async" class="h-full w-full object-cover">
+
+CÓMO AGREGAR UN VIDEO
+1. Copia el video aquí, ej: galeria/aplicacion-estuco.mp4 (formato H.264/mp4)
+2. Genera una imagen de portada del video (un frame representativo) y guárdala
+   como galeria/aplicacion-estuco-poster.jpg
+3. Reemplaza el bloque PLACEHOLDER de video por:
+   <video controls preload="none" poster="galeria/aplicacion-estuco-poster.jpg"
+          class="h-full w-full object-cover">
+     <source src="galeria/aplicacion-estuco.mp4" type="video/mp4">
+   </video>
+   (preload="none" evita que el video se descargue hasta que el usuario le dé play)
+
+No subas videos largos sin comprimir: si pesan más de ~15-20 MB, considera subirlos
+a YouTube/Vimeo como "no listado" e insertar el video con un iframe en su lugar.
