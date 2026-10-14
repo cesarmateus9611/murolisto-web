@@ -184,10 +184,13 @@
     inset: -2px;
     z-index: -1;
     border-radius: inherit;
-    background: conic-gradient(from var(--combo-angle), rgb(var(--hazard)), rgb(var(--hazard-deep)), rgb(var(--steel)), rgb(var(--hazard)));
-    animation: spin-combo 6s linear infinite;
+    background: conic-gradient(from 45deg, rgb(var(--hazard)), rgb(var(--hazard-deep)), rgb(var(--steel)), rgb(var(--hazard)));
   }
-  @keyframes spin-combo { to { --combo-angle: 360deg; } }
+  .combo-border:hover::before { animation: combo-pulse 1.8s ease-in-out infinite; }
+  @keyframes combo-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.75; }
+  }
 
   /* Pulso del botón flotante de WhatsApp */
   .wa-pulse::before {
@@ -266,7 +269,7 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .combo-border::before, .wa-pulse::before, .seal-spin { animation: none; }
+    .combo-border:hover::before, .wa-pulse::before, .seal-spin { animation: none; }
     .reveal { opacity: 1; transform: none; transition: none; }
     * { transition-duration: 0.001ms !important; }
   }
