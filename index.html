@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="es" data-theme="light">
 <head>
+<script>
+  /* Aplica el tema y tamaño de texto guardados antes de pintar, para evitar parpadeo. */
+  (function () {
+    try {
+      var tema = localStorage.getItem('murolisto-theme');
+      var tamano = localStorage.getItem('murolisto-fontsize');
+      if (tema) document.documentElement.setAttribute('data-theme', tema);
+      if (tamano) document.documentElement.setAttribute('data-fontsize', tamano);
+    } catch (e) {}
+  })();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Distribuidor oficial de Productos Santafe. Estuco 100% Acrílico y Vinilo Tipo 1 directo de fábrica para maestros de obra y contratistas.">
@@ -142,8 +153,40 @@
     color-scheme: dark;
   }
 
+  /* Alto contraste: blanco puro / negro puro + acentos oscurecidos para
+     cumplir contraste AA, y bordes forzados a negro sólido (ver regla
+     ".border-contrast" más abajo). Debe ir después de los bloques de
+     arriba para ganar el empate de especificidad con la media query
+     de modo oscuro del sistema cuando ambos aplican. */
+  :root[data-theme="contrast"] {
+    --navy: 0 0 0;
+    --navy-2: 0 0 0;
+    --navy-3: 20 20 20;
+    --concrete: 255 255 255;
+    --concrete-2: 255 255 255;
+    --surface: 255 255 255;
+    --ink: 0 0 0;
+    --steel: 0 70 199;
+    --steel-deep: 0 46 150;
+    --hazard: 154 91 0;
+    --hazard-deep: 122 72 0;
+    --wa: 15 120 55;
+    --wa-deep: 10 92 42;
+    color-scheme: light;
+  }
+  :root[data-theme="contrast"] * { border-color: rgb(var(--ink)) !important; }
+
+  /* Tamaño de texto accesible: escala toda la página (Tailwind usa rem) */
+  html[data-fontsize="lg"] { font-size: 112.5%; }
+  html[data-fontsize="xl"] { font-size: 125%; }
+
   html { scroll-behavior: smooth; }
   body { background: rgb(var(--concrete)); }
+
+  /* Transición suave entre temas */
+  body, body *:not(.reveal) {
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, fill 0.35s ease, stroke 0.35s ease;
+  }
 
   h1, h2, h3, h4 { text-wrap: balance; }
   p { text-wrap: pretty; }
@@ -309,6 +352,49 @@
       </nav>
 
       <div class="flex items-center gap-2">
+        <div class="relative">
+          <button id="a11y-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="a11y-menu"
+                  aria-label="Opciones de tema y accesibilidad"
+                  class="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 text-ink transition-colors duration-300 hover:bg-ink/5">
+            <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+          </button>
+
+          <div id="a11y-menu" role="menu" aria-label="Tema y accesibilidad"
+               class="hidden absolute right-0 top-[calc(100%+0.6rem)] z-50 w-64 rounded-2xl border border-ink/10 bg-surface p-4 shadow-lift">
+            <div class="mb-4">
+              <div class="mb-2 text-xs font-bold uppercase tracking-wide text-ink/50">Tema visual</div>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" data-theme-choice="light" aria-pressed="false"
+                        class="theme-btn flex flex-col items-center gap-1 rounded-xl border border-ink/15 py-2 text-[11px] font-semibold text-ink transition-colors duration-300 hover:bg-ink/5">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                  Claro
+                </button>
+                <button type="button" data-theme-choice="dark" aria-pressed="false"
+                        class="theme-btn flex flex-col items-center gap-1 rounded-xl border border-ink/15 py-2 text-[11px] font-semibold text-ink transition-colors duration-300 hover:bg-ink/5">
+                  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                  Oscuro
+                </button>
+                <button type="button" data-theme-choice="contrast" aria-pressed="false"
+                        class="theme-btn flex flex-col items-center gap-1 rounded-xl border border-ink/15 py-2 text-[11px] font-semibold text-ink transition-colors duration-300 hover:bg-ink/5">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 010 18z" fill="currentColor"/></svg>
+                  Contraste
+                </button>
+              </div>
+            </div>
+            <div>
+              <div class="mb-2 text-xs font-bold uppercase tracking-wide text-ink/50">Tamaño de texto</div>
+              <div class="grid grid-cols-3 gap-2">
+                <button type="button" data-fontsize-choice="base" aria-pressed="false" class="fontsize-btn rounded-xl border border-ink/15 py-2 text-xs font-bold text-ink transition-colors duration-300 hover:bg-ink/5">A</button>
+                <button type="button" data-fontsize-choice="lg" aria-pressed="false" class="fontsize-btn rounded-xl border border-ink/15 py-2 text-sm font-bold text-ink transition-colors duration-300 hover:bg-ink/5">A+</button>
+                <button type="button" data-fontsize-choice="xl" aria-pressed="false" class="fontsize-btn rounded-xl border border-ink/15 py-2 text-base font-bold text-ink transition-colors duration-300 hover:bg-ink/5">A++</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <a href="https://wa.me/573058570653?text=%C2%A1Hola%20Muro%20Listo%21%20%F0%9F%91%B7%E2%80%8D%E2%99%82%EF%B8%8F%20Vengo%20de%20su%20p%C3%A1gina%20web.%20Me%20interesa%20aprovechar%20los%20precios%20directos%20de%20f%C3%A1brica%20de%20Productos%20SantaFe%20para%20mi%20proyecto.%20%C2%BFMe%20ayudan%20con%20una%20cotizaci%C3%B3n%2C%20por%20favor%3F"
            target="_blank" rel="noopener"
            class="rounded-full bg-navy px-5 py-2 text-sm font-semibold text-white shadow-lift-sm transition-all duration-300 hover:bg-steel hover:shadow-lift">
@@ -571,7 +657,56 @@
         <h2 class="mt-2 font-display text-3xl font-900 text-ink md:text-4xl">La Calidad se Siente: ¿Por qué elegir Estuco Acrílico?</h2>
       </div>
 
-      <div class="reveal overflow-x-auto rounded-3xl border border-ink/10 bg-surface shadow-lift-sm">
+      <!-- Versión móvil: tarjetas apiladas -->
+      <div class="reveal space-y-4 md:hidden">
+        <div class="rounded-2xl border border-ink/10 bg-surface p-4 shadow-lift-sm">
+          <div class="text-sm font-semibold uppercase tracking-wide text-ink/50">Uso recomendado</div>
+          <div class="mt-2 rounded-xl border-2 border-hazard bg-hazard/10 px-4 py-3">
+            <div class="text-xs font-black uppercase tracking-wide text-hazard-deep">🏆 MuroListo</div>
+            <div class="mt-1 text-base font-bold text-ink">Interiores y exteriores. Soporta intemperie.</div>
+          </div>
+          <div class="mt-2 px-1 py-2">
+            <div class="text-xs font-bold uppercase tracking-wide text-ink/55">❌ Estuco Plástico</div>
+            <div class="mt-1 text-base font-medium text-ink/70">Solo interiores.</div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-ink/10 bg-surface p-4 shadow-lift-sm">
+          <div class="text-sm font-semibold uppercase tracking-wide text-ink/50">Resistencia al agua</div>
+          <div class="mt-2 rounded-xl border-2 border-hazard bg-hazard/10 px-4 py-3">
+            <div class="text-xs font-black uppercase tracking-wide text-hazard-deep">🏆 MuroListo</div>
+            <div class="mt-1 text-base font-bold text-ink">Alta. Crea barrera contra la humedad.</div>
+          </div>
+          <div class="mt-2 px-1 py-2">
+            <div class="text-xs font-bold uppercase tracking-wide text-ink/55">❌ Estuco Plástico</div>
+            <div class="mt-1 text-base font-medium text-ink/70">Baja. Se deteriora con la humedad.</div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-ink/10 bg-surface p-4 shadow-lift-sm">
+          <div class="text-sm font-semibold uppercase tracking-wide text-ink/50">Dureza y adherencia</div>
+          <div class="mt-2 rounded-xl border-2 border-hazard bg-hazard/10 px-4 py-3">
+            <div class="text-xs font-black uppercase tracking-wide text-hazard-deep">🏆 MuroListo</div>
+            <div class="mt-1 text-base font-bold text-ink">Excelente. Menor riesgo de grietas.</div>
+          </div>
+          <div class="mt-2 px-1 py-2">
+            <div class="text-xs font-bold uppercase tracking-wide text-ink/55">❌ Estuco Plástico</div>
+            <div class="mt-1 text-base font-medium text-ink/70">Regular. Puede cristalizarse.</div>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-ink/10 bg-surface p-4 shadow-lift-sm">
+          <div class="text-sm font-semibold uppercase tracking-wide text-ink/50">Rendimiento</div>
+          <div class="mt-2 rounded-xl border-2 border-hazard bg-hazard/10 px-4 py-3">
+            <div class="text-xs font-black uppercase tracking-wide text-hazard-deep">🏆 MuroListo</div>
+            <div class="mt-1 text-base font-bold text-ink">Alto. Menos producto para un acabado liso.</div>
+          </div>
+          <div class="mt-2 px-1 py-2">
+            <div class="text-xs font-bold uppercase tracking-wide text-ink/55">❌ Estuco Plástico</div>
+            <div class="mt-1 text-base font-medium text-ink/70">Medio.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Versión escritorio/tablet: tabla completa -->
+      <div class="reveal hidden overflow-x-auto rounded-3xl border border-ink/10 bg-surface shadow-lift-sm md:block">
         <table class="w-full min-w-[680px] border-collapse text-left">
           <thead>
             <tr>
@@ -1187,6 +1322,71 @@
       var NUMERO_WHATSAPP = '573058570653';
 
       document.getElementById('anio-actual').textContent = new Date().getFullYear();
+
+      /* --- Tema visual y accesibilidad (localStorage) --- */
+      var THEME_KEY = 'murolisto-theme';
+      var FONTSIZE_KEY = 'murolisto-fontsize';
+      var htmlEl = document.documentElement;
+      var a11yToggle = document.getElementById('a11y-toggle');
+      var a11yMenu = document.getElementById('a11y-menu');
+      var themeButtons = a11yMenu.querySelectorAll('.theme-btn');
+      var fontsizeButtons = a11yMenu.querySelectorAll('.fontsize-btn');
+
+      function marcarActivo(botones, valorActivo, attr) {
+        botones.forEach(function (btn) {
+          var activo = btn.getAttribute(attr) === valorActivo;
+          btn.setAttribute('aria-pressed', activo ? 'true' : 'false');
+          btn.classList.toggle('bg-steel', activo);
+          btn.classList.toggle('border-steel', activo);
+          btn.classList.toggle('text-white', activo);
+        });
+      }
+
+      function aplicarTema(tema) {
+        htmlEl.setAttribute('data-theme', tema);
+        marcarActivo(themeButtons, tema, 'data-theme-choice');
+        try { localStorage.setItem(THEME_KEY, tema); } catch (e) {}
+      }
+
+      function aplicarTamanoTexto(tamano) {
+        htmlEl.setAttribute('data-fontsize', tamano);
+        marcarActivo(fontsizeButtons, tamano, 'data-fontsize-choice');
+        try { localStorage.setItem(FONTSIZE_KEY, tamano); } catch (e) {}
+      }
+
+      var temaGuardado = 'light';
+      var tamanoGuardado = 'base';
+      try {
+        temaGuardado = localStorage.getItem(THEME_KEY) || 'light';
+        tamanoGuardado = localStorage.getItem(FONTSIZE_KEY) || 'base';
+      } catch (e) {}
+      aplicarTema(temaGuardado);
+      aplicarTamanoTexto(tamanoGuardado);
+
+      themeButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () { aplicarTema(btn.getAttribute('data-theme-choice')); });
+      });
+      fontsizeButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () { aplicarTamanoTexto(btn.getAttribute('data-fontsize-choice')); });
+      });
+
+      a11yToggle.addEventListener('click', function () {
+        var abierto = a11yMenu.classList.toggle('hidden') === false;
+        a11yToggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+      });
+      document.addEventListener('click', function (e) {
+        if (!a11yMenu.classList.contains('hidden') && !a11yMenu.contains(e.target) && !a11yToggle.contains(e.target)) {
+          a11yMenu.classList.add('hidden');
+          a11yToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !a11yMenu.classList.contains('hidden')) {
+          a11yMenu.classList.add('hidden');
+          a11yToggle.setAttribute('aria-expanded', 'false');
+          a11yToggle.focus();
+        }
+      });
 
       /* --- Menú móvil --- */
       var navToggle = document.getElementById('nav-toggle');
